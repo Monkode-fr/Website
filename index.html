@@ -1,0 +1,231 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MonKode</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#accueil" class="logo">
+                    <img src="image/logo.png" alt="MonKode" height="32">
+                </a>
+
+                <!-- burger icon -->
+                <button class="burger" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <ul class="nav-list">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tarif">Tarifs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main class="cards-container">
+        <section id="accueil" class="hero-section">
+            <div class="hero-content">
+                <h1>Design pour les entreprises ambitieuses</h1>
+                <p>Chez MonKode, nous allions créativité et stratégie pour créer des expériences qui captivent et
+                    élèvent.</p>
+                <a href="#contact" class="cta-button">
+                    Prendre un rendez-vous
+                    <span class="arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
+            <div class="shape">
+                <img src="image/shap1.png" alt="MonKode">
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="features-intro">
+                <h2>Vous avez une idée ? On lui donne vie.</h2>
+                <p>
+                    Notre mission : transformer vos projets en expériences digitales efficaces, modernes et pensées pour
+                    vos clients.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Lancement sur-mesure</h3>
+                    <p>De l’idée à la mise en ligne, nous construisons votre site à votre image, adapté à vos besoins.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>Accompagnement humain</h3>
+                    <p>On échange, on écoute, on ajuste. <br>Votre projet évolue avec vous, pas dans un coin obscur.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>Vision évolutive</h3>
+                    <p>Commencez maintenant, <br> Ajoutez plus tard : appli, espace membre, fonctionnalités avancées…
+                        tout est possible.</p>
+                </div>
+            </div>
+
+            <div class="services-content">
+                <div class="services-text">
+                    <h3>Des solutions concrètes, claires et adaptées</h3>
+                    <p>Parce qu’un site web doit d’abord servir votre projet, on vous propose des offres simples,
+                        efficaces, et surtout évolutives.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-box purple">
+                        <h4>Site vitrine</h4>
+                        <p>Une présence professionnelle en ligne avec page d’accueil, services et contact.</p>
+                    </div>
+                    <div class="service-box lilac">
+                        <h4>Site sur mesure</h4>
+                        <p>Site unique, fonctionnalités spécifiques, design personnalisé.
+                    </div>
+                    <div class="service-box light">
+                        <h4>Évolutivité</h4>
+                        <p>Application web, blog, outil interne… On construit avec vous pour l’avenir.</p>
+                    </div>
+                    <div class="service-box blue">
+                        <h4>Suivi & support</h4>
+                        <p>Une fois livré, on reste là. Maintenance, ajustements, conseils… Vous êtes accompagné.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="tarif" class="pricing-section">
+            <div class="pricing-header">
+                <h2>Des Tarifs Clairs. Sans Surprise.</h2>
+                <p>Choisissez la formule qui correspond le mieux à votre projet.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Offre 1 -->
+                <div class="pricing-card basic">
+                    <h3>Vitrine</h3>
+                    <ul>
+                        <li>Site 1 page</li>
+                        <li>Design responsive</li>
+                        <li>Formulaire de contact</li>
+                        <li>Optimisation basique</li>
+                    </ul>
+                    <div class="price">400€</div>
+                    <a href="#contact" class="btn-outline">Commencer</a>
+                </div>
+
+                <!-- Offre 2 -->
+                <div class="pricing-card pro">
+                    <h3>Sur-mesure</h3>
+                    <ul>
+                        <li>Site multi-pages</li>
+                        <li>Fonctionnalités personnalisées</li>
+                        <li>SEO avancé</li>
+                        <li>Accompagnement dédié</li>
+                    </ul>
+                    <div class="price">800€</div>
+                    <a href="#contact" class="btn-filled">Commencer</a>
+                </div>
+
+                <!-- Offre 3 -->
+                <div class="pricing-card custom">
+                    <div class="popular">Populaire</div>
+                    <h3>Évolutif</h3>
+                    <ul>
+                        <li>Application web / mobile</li>
+                        <li>Connexion API / back-office</li>
+                        <li>Fonctionnalités sur devis</li>
+                        <li>Suivi & support continu</li>
+                    </ul>
+                    <div class="price">Sur devis</div>
+                    <a href="#contact" class="btn-orange">Demander un devis</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <div class="contact-intro">
+                    <h2>Parlons de votre projet</h2>
+                    <p>Une idée ? Une question ? On vous répond rapidement pour avancer ensemble.</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Parlez-nous de votre projet..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn-orange">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="image/logo.png" alt="MonKode" height="32">
+                <p>MonKode, studio digital créatif pour les entreprises ambitieuses.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tarif">Tarifs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <ul>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@monkode.fr">contact@monkode.fr</a>
+                    </li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="tel:+33612345678">+33 6 12 34 56 78</a></li>
+                    <li><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/monkode" target="_blank"
+                            rel="noopener">linkedin.com/monkode</a></li>
+                    <li><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/monkode.fr"
+                            target="_blank" rel="noopener">@monkode.fr</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 MonKode. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
