@@ -9,9 +9,21 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "7jA85w4ZaSJMskQKY",
+            });
+        })();
+    </script>
 </head>
 
+
 <body>
+
     <header>
         <nav class="navbar">
             <div class="container">
@@ -48,6 +60,11 @@
         </nav>
     </header>
 
+    <div id="custom-alert" class="custom-alert" style="display: none;">
+        <span id="custom-alert-icon"></span>
+        <span id="custom-alert-text"></span>
+    </div>
+
     <main class="cards-container">
         <section id="accueil" class="hero-section">
             <div class="hero-content">
@@ -57,7 +74,7 @@
                     élèvent.
                 </p>
                 <a href="#contact" class="cta-button">
-                    <span data-i18n="hero.cta">Prendre un rendez-vous</span>
+                    <span data-i18n="hero.cta">Contactez-nous</span>
                     <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             </div>
@@ -161,7 +178,7 @@
                         <li data-i18n="pricing.basic.feature4">Optimisation basique</li>
                     </ul>
                     <div class="price" data-i18n="pricing.basic.price">300€</div>
-                    <a href="#contact" class="btn-outline" data-i18n="pricing.basic.cta">Commencer</a>
+                    <a href="#contact" class="btn-filled" data-i18n="pricing.basic.cta">Commencer</a>
                 </div>
 
                 <div class="pricing-card ia">
@@ -173,7 +190,7 @@
                         <li data-i18n="pricing.ia.feature4">Conseils IA personnalisés</li>
                     </ul>
                     <div class="price" data-i18n="pricing.ia.price">400€</div>
-                    <a href="#contact" class="btn-filled" data-i18n="pricing.ia.cta">Commencer</a>
+                    <a href="#contact" class="btn-outline" data-i18n="pricing.ia.cta">Commencer</a>
                 </div>
 
                 <div class="pricing-card pro">
@@ -230,6 +247,11 @@
                             data-i18n-placeholder="contact.form.email.placeholder" required>
                     </div>
                     <div class="form-group">
+                        <label for="subject" data-i18n="contact.form.subject">Objet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Sujet de votre demande"
+                            data-i18n-placeholder="contact.form.subject.placeholder" required>
+                    </div>
+                    <div class="form-group">
                         <label for="message" data-i18n="contact.form.message">
                             Votre message
                         </label>
@@ -266,14 +288,8 @@
                 <ul>
                     <li>
                         <i class="fa-solid fa-envelope"></i>
-                        <a href="mailto:contact@monkode.fr" data-i18n="footer.contact.email">
-                            contact@monkode.fr
-                        </a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-phone"></i>
-                        <a href="tel:+33612345678" data-i18n="footer.contact.phone">
-                            +33 6 12 34 56 78
+                        <a href="mailto:monkode@gmx.fr" data-i18n="footer.contact.email">
+                            monkode@gmx.fr
                         </a>
                     </li>
                     <li><i class="fa-brands fa-linkedin"></i>
@@ -296,7 +312,11 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+
+    <script src="script/main.js"></script>
+    <script src="script/i18n.js"></script>
+    <script src="script/form.js"></script>
+
 </body>
 
 </html>

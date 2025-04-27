@@ -1,76 +1,6 @@
-// script.js
-document.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 20) {
-        navbar.style.boxShadow = "0 8px 20px rgba(0,0,0,0.1)";
-        navbar.style.background = "rgba(255, 255, 255, 0.9)";
-    } else {
-        navbar.style.boxShadow = "0 8px 20px rgba(0,0,0,0.05)";
-        navbar.style.background = "rgba(255, 255, 255, 0.7)";
-    }
-});
 
 
-const shapesContainer = document.createElement("div");
-shapesContainer.style.position = "fixed";
-shapesContainer.style.top = "0";
-shapesContainer.style.left = "0";
-shapesContainer.style.width = "100vw";
-shapesContainer.style.height = "100vh";
-shapesContainer.style.pointerEvents = "none";
-shapesContainer.style.zIndex = "-1"; // Remettre au-dessus du fond mais sous le contenu
-document.body.appendChild(shapesContainer);
-
-function randomBetween(a, b) {
-    return a + Math.random() * (b - a);
-}
-
-// Couleurs moins transparentes
-const colors = [
-    "rgba(54, 113, 149, 0.06)",
-    "rgba(40, 80, 110, 0.05)",
-    "rgba(30, 60, 90, 0.04)",
-    "rgba(20, 40, 60, 0.035)",
-    "rgba(10, 20, 30, 0.03)"
-];
-
-function createShape() {
-    const shape = document.createElement("div");
-    const size = randomBetween(60, 120); // tailles un peu plus petites
-    shape.style.position = "absolute";
-    shape.style.width = `${size}px`;
-    shape.style.height = `${size}px`;
-    shape.style.borderRadius = `${randomBetween(30, 50)}% ${randomBetween(30, 50)}% ${randomBetween(30, 50)}% ${randomBetween(30, 50)}% / ${randomBetween(30, 50)}% ${randomBetween(30, 50)}% ${randomBetween(30, 50)}% ${randomBetween(30, 50)}%`;
-    shape.style.background = colors[Math.floor(Math.random() * colors.length)];
-    shape.style.left = `${randomBetween(0, 100)}vw`;
-    shape.style.top = `${randomBetween(0, 100)}vh`;
-    shape.style.filter = "blur(1.5px)";
-    shape.style.transition = "transform 10s linear";
-    shapesContainer.appendChild(shape);
-
-    setTimeout(() => {
-        shape.style.transform = `translate(${randomBetween(-100, 100)}px, ${randomBetween(-100, 100)}px) scale(${randomBetween(0.8, 1.2)}) rotate(${randomBetween(-30, 30)}deg)`;
-    }, 100);
-
-    setInterval(() => {
-        shape.style.transform = `translate(${randomBetween(-100, 100)}px, ${randomBetween(-100, 100)}px) scale(${randomBetween(0.8, 1.2)}) rotate(${randomBetween(-30, 30)}deg)`;
-    }, 10000);
-}
-
-for (let i = 0; i < 6; i++) { // moins de formes
-    createShape();
-}
-
-const burger = document.querySelector(".burger");
-const navList = document.querySelector(".nav-list");
-
-burger.addEventListener("click", () => {
-    navList.classList.toggle("open");
-});
-
-
-
-// Traductions
+/* ================ Système de traduction (i18n) ================ */
 const translations = {
     fr: {
         "meta.title": "MonKode",
@@ -80,7 +10,7 @@ const translations = {
         "nav.contact": "Contact",
         "hero.title": "Design pour les entreprises ambitieuses",
         "hero.subtitle": "Chez MonKode, nous allions créativité et stratégie pour créer des expériences qui captivent et élèvent.",
-        "hero.cta": "Prendre un rendez-vous",
+        "hero.cta": "Contactez-nous",
         "features.intro.title": "Vous avez une idée ? Nous la concrétisons.",
         "features.intro.text": "Notre mission est de transformer vos projets en expériences digitales modernes, efficaces et centrées sur vos clients. Nous vous accompagnons à chaque étape, de la réflexion à la mise en ligne, pour donner vie à vos ambitions.",
         "feature.launch": "Lancement sur-mesure",
@@ -137,6 +67,8 @@ const translations = {
         "contact.form.name.placeholder": "Votre nom",
         "contact.form.email": "Adresse email",
         "contact.form.email.placeholder": "Votre email",
+        "contact.form.subject": "Objet",
+        "contact.form.subject.placeholder": "Sujet de votre demande",
         "contact.form.message": "Votre message",
         "contact.form.message.placeholder": "Parlez-nous de votre projet...",
         "contact.form.button": "Envoyer le message",
@@ -147,8 +79,7 @@ const translations = {
         "footer.nav.tarif": "Tarifs",
         "footer.nav.contact": "Contact",
         "footer.contact.title": "Contact",
-        "footer.contact.email": "contact@monkode.fr",
-        "footer.contact.phone": "+33 6 12 34 56 78",
+        "footer.contact.email": "monkode@gmx.fr",
         "footer.bottom.text": "© 2025 MonKode. Tous droits réservés."
     },
     en: {
@@ -159,7 +90,7 @@ const translations = {
         "nav.contact": "Contact",
         "hero.title": "Design for ambitious businesses",
         "hero.subtitle": "At MonKode, we combine creativity and strategy to create experiences that captivate and elevate.",
-        "hero.cta": "Schedule an appointment",
+        "hero.cta": "Contact us",
         "features.intro.title": "Got an idea ? We'll bring it to life.",
         "features.intro.text": "Our mission is to transform your projects into modern, efficient digital experiences centered on your customers. We support you at every step, from ideation to launch, to bring your ambitions to life.",
         "feature.launch": "Custom launch",
@@ -216,6 +147,8 @@ const translations = {
         "contact.form.name.placeholder": "Your name",
         "contact.form.email": "Email address",
         "contact.form.email.placeholder": "Your email",
+        "contact.form.subject": "Subject",
+        "contact.form.subject.placeholder": "Subject of your request",
         "contact.form.message": "Your message",
         "contact.form.message.placeholder": "Tell us about your project...",
         "contact.form.button": "Send message",
@@ -226,29 +159,29 @@ const translations = {
         "footer.nav.tarif": "Pricing",
         "footer.nav.contact": "Contact",
         "footer.contact.title": "Contact",
-        "footer.contact.email": "contact@monkode.fr",
-        "footer.contact.phone": "+33 6 12 34 56 78",
+        "footer.contact.email": "monkode@gmx.fr",
         "footer.bottom.text": "© 2025 MonKode. All rights reserved."
     }
 };
 
-// Sélecteurs
+// Sélecteurs pour la langue et les éléments à traduire
 const langButtons = document.querySelectorAll('.lang-btn');
 const i18nElements = document.querySelectorAll('[data-i18n]');
 const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
 let currentLang = localStorage.getItem('lang') || 'fr';
 
+/* ================ Fonction pour changer la langue du site ================ */
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
     document.documentElement.lang = lang;
 
-    // active class
+    // Met à jour l'état actif des boutons de langue
     langButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
 
-    // textes
+    // Met à jour les textes traduits
     i18nElements.forEach(el => {
         const key = el.dataset.i18n;
         if (translations[lang][key]) {
@@ -256,7 +189,7 @@ function setLanguage(lang) {
         }
     });
 
-    // placeholders
+    // Met à jour les placeholders traduits
     placeholderElements.forEach(el => {
         const key = el.dataset.i18nPlaceholder;
         if (translations[lang][key]) {
@@ -265,10 +198,10 @@ function setLanguage(lang) {
     });
 }
 
-// event listeners
+// Écouteurs d'événements pour les boutons de langue
 langButtons.forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
 });
 
-// init
-setLanguage(currentLang);   
+// Initialisation de la langue au chargement
+setLanguage(currentLang);
