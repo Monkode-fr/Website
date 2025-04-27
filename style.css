@@ -82,6 +82,51 @@ body {
     cursor: pointer;
 }
 
+/* Lang Switcher Styles */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(245, 245, 245, 0.85);
+    border-radius: 12px;
+    padding: 6px 16px;
+    box-shadow: 0 2px 8px rgba(71, 173, 206, 0.06);
+    font-size: 1.05em;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.lang-btn.active,
+.lang-btn:focus {
+    background: #47adce;
+    color: #fff;
+    outline: none;
+}
+
+.lang-btn:not(.active):hover {
+    background: #e3f3fa;
+    color: #47adce;
+}
+
+.lang-switch span {
+    color: #bbb;
+    font-weight: 700;
+    font-size: 1.1em;
+    user-select: none;
+}
+
+
 /* Mobile navigation (améliorée) */
 @media screen and (max-width: 768px) {
     .burger {
@@ -128,6 +173,8 @@ body {
     .nav-list li a:hover {
         color: #47adce;
     }
+
+
 }
 
 
@@ -636,4 +683,59 @@ main {
     /* un peu plus compact */
     color: #888;
     font-size: 0.85rem;
+}
+
+
+/* Responsive language switcher */
+.lang-switch-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* cacher le switcher desktop */
+    .lang-switch {
+        display: none;
+    }
+
+    /* afficher celui dans le menu */
+    .lang-switch-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        width: 100%;
+        /* facultatif : même style que .lang-switch */
+        background: rgba(245, 245, 245, 0.85);
+        border-radius: 12px;
+        padding: 6px 16px;
+        box-shadow: 0 2px 8px rgba(71, 173, 206, 0.06);
+        font-size: 1.05em;
+    }
+
+    .lang-switch-mobile .lang-btn {
+        background: none;
+        border: none;
+        color: #1a1a1a;
+        font-weight: 600;
+        font-family: inherit;
+        font-size: 1em;
+        padding: 6px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-switch-mobile .lang-btn.active,
+    .lang-switch-mobile .lang-btn:focus {
+        background: #47adce;
+        color: #fff;
+        outline: none;
+    }
+
+    .lang-switch-mobile .lang-btn:not(.active):hover {
+        background: #e3f3fa;
+        color: #47adce;
+    }
 }
